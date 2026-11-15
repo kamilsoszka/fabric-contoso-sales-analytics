@@ -337,4 +337,6 @@ Fabric-generated folders preserve the workspace definitions required for source 
 
 ## License
 
-This project is published for portfolio and educational purposes.
+This project is licensed under the [MIT License](LICENSE).
+
+Copyright © 2026 Kamil Soszka.
