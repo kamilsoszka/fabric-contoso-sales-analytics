@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Refresh_Contoso_From_OneDrive"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8e06671c-5e7d-84ce-4e86-fe77ab1dabb6"
+  }
+}
