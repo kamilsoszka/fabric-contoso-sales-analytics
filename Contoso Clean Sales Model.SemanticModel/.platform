@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Contoso Clean Sales Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b57bf6c1-542d-ae68-4eba-b57f522026d0"
+  }
+}

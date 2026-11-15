@@ -1,0 +1,188 @@
+table date
+	lineageTag: 31087d78-d2aa-4314-b370-3619c09589c0
+	sourceLineageTag: [dbo].[date]
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: yyyy-MM-dd
+		lineageTag: d5ba53b8-a17b-4c84-a1bf-9f5332d13d1d
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column DateKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: af0e5dcb-4fa7-4700-a969-7302f0c8592d
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a0e4e6e-9ae6-4ede-b916-1b506509dc6b
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column YearQuarter
+		dataType: string
+		lineageTag: 4711c58f-db85-43db-b1aa-c0059eadb839
+		sourceLineageTag: YearQuarter
+		summarizeBy: none
+		sourceColumn: YearQuarter
+		sortByColumn: YearQuarterNumber
+
+		annotation SummarizationSetBy = User
+
+	column YearQuarterNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: eecda6a8-372f-4c89-8983-09bea4d62503
+		sourceLineageTag: YearQuarterNumber
+		summarizeBy: none
+		sourceColumn: YearQuarterNumber
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		dataType: string
+		lineageTag: cedbfb91-a525-4634-9cf3-3e75cb5eb332
+		sourceLineageTag: Quarter
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = User
+
+	column YearMonth
+		dataType: dateTime
+		formatString: MMMM yyyy
+		lineageTag: 207e9ba9-7f61-4826-bebe-4c92c8748855
+		sourceLineageTag: YearMonth
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+		annotation SummarizationSetBy = User
+
+	column YearMonthShort
+		dataType: dateTime
+		formatString: MMM yyyy
+		lineageTag: 120deaf3-352f-4a30-b12f-6068aec700b1
+		sourceLineageTag: YearMonthShort
+		summarizeBy: none
+		sourceColumn: YearMonthShort
+
+		annotation SummarizationSetBy = User
+
+	column YearMonthNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a220ee8f-1298-487b-bec8-1555fa0ed438
+		sourceLineageTag: YearMonthNumber
+		summarizeBy: none
+		sourceColumn: YearMonthNumber
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		lineageTag: acc74df4-bf9e-4f8c-8241-32d41cf29e35
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = User
+
+	column MonthShort
+		dataType: string
+		lineageTag: 8f80bef2-d52d-43ac-bde6-c425adef1c9e
+		sourceLineageTag: MonthShort
+		summarizeBy: none
+		sourceColumn: MonthShort
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = User
+
+	column MonthNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cd6f5950-2ab4-4a22-9a22-0b7d3ae43713
+		sourceLineageTag: MonthNumber
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = User
+
+	column DayofWeek
+		dataType: string
+		lineageTag: 37711766-e837-49c3-b28d-a1947a6d4db5
+		sourceLineageTag: DayofWeek
+		summarizeBy: none
+		sourceColumn: DayofWeek
+		sortByColumn: DayofWeekNumber
+
+		annotation SummarizationSetBy = User
+
+	column DayofWeekShort
+		dataType: string
+		lineageTag: b904cd74-6f7a-4027-b8dc-f94917786061
+		sourceLineageTag: DayofWeekShort
+		summarizeBy: none
+		sourceColumn: DayofWeekShort
+		sortByColumn: DayofWeekNumber
+
+		annotation SummarizationSetBy = User
+
+	column DayofWeekNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: df19966b-b110-4970-8080-94afdaa59eb2
+		sourceLineageTag: DayofWeekNumber
+		summarizeBy: none
+		sourceColumn: DayofWeekNumber
+
+		annotation SummarizationSetBy = User
+
+	column WorkingDay
+		dataType: int64
+		formatString: 0
+		lineageTag: 43a609b4-5c95-4e9c-9734-e09082e0753e
+		sourceLineageTag: WorkingDay
+		summarizeBy: none
+		sourceColumn: WorkingDay
+
+		annotation SummarizationSetBy = User
+
+	column WorkingDayNumber
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d5164c19-b7f0-4b64-ab91-1675fd1b0fbe
+		sourceLineageTag: WorkingDayNumber
+		summarizeBy: none
+		sourceColumn: WorkingDayNumber
+
+		annotation SummarizationSetBy = User
+
+	partition date = entity
+		mode: directLake
+		source
+			entityName: date
+			schemaName: dbo
+			expressionSource: 'DirectLake - ContosoCleanLakehouse'
+

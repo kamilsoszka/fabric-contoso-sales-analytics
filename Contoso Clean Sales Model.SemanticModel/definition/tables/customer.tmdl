@@ -1,0 +1,246 @@
+table customer
+	lineageTag: a23eba55-f89b-485a-9018-3b432e551768
+	sourceLineageTag: [dbo].[customer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8503c142-724a-492f-badb-bfab7a978751
+		sourceLineageTag: CustomerKey
+		summarizeBy: count
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeoAreaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: fb6d18aa-2b57-4bf9-8b30-6acf5a657d43
+		sourceLineageTag: GeoAreaKey
+		summarizeBy: count
+		sourceColumn: GeoAreaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 56920097-de6c-4a67-942b-1fbb0e12b861
+		sourceLineageTag: StartDT
+		summarizeBy: none
+		sourceColumn: StartDT
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a1b16e10-b743-462a-9886-1216651df5a0
+		sourceLineageTag: EndDT
+		summarizeBy: none
+		sourceColumn: EndDT
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continent
+		dataType: string
+		lineageTag: 9d343d31-e54b-4deb-a4a7-6e3db2bf6731
+		sourceLineageTag: Continent
+		summarizeBy: none
+		sourceColumn: Continent
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: b764b02f-e565-4cd6-bba5-bdc900814fb1
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 97497160-6005-462c-9ba8-1ab8d9fdbdfe
+		sourceLineageTag: Title
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column GivenName
+		dataType: string
+		lineageTag: dbd1fce6-c6ba-4ef6-b7c0-95d728d54f73
+		sourceLineageTag: GivenName
+		summarizeBy: none
+		sourceColumn: GivenName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleInitial
+		dataType: string
+		lineageTag: 65aa5993-40d1-4be3-bf57-25ef29825043
+		sourceLineageTag: MiddleInitial
+		summarizeBy: none
+		sourceColumn: MiddleInitial
+
+		annotation SummarizationSetBy = Automatic
+
+	column Surname
+		dataType: string
+		lineageTag: 103ebf58-c0e1-46ab-90b4-55e66bd1becf
+		sourceLineageTag: Surname
+		summarizeBy: none
+		sourceColumn: Surname
+
+		annotation SummarizationSetBy = Automatic
+
+	column StreetAddress
+		dataType: string
+		lineageTag: c5b43fa4-1524-408a-8526-84f353b8d7a8
+		sourceLineageTag: StreetAddress
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: StreetAddress
+
+		annotation SummarizationSetBy = User
+
+	column City
+		dataType: string
+		lineageTag: c6bc4ad8-479e-4189-95d3-f4e981a5b481
+		sourceLineageTag: City
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = User
+
+	column State
+		dataType: string
+		lineageTag: 5614723d-3ad4-4320-9c69-c30c6a030fb5
+		sourceLineageTag: State
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = User
+
+	column StateFull
+		dataType: string
+		lineageTag: 6723420d-9818-4755-8382-179a099b5d27
+		sourceLineageTag: StateFull
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: StateFull
+
+		annotation SummarizationSetBy = User
+
+	column ZipCode
+		dataType: string
+		lineageTag: efb8688a-e9e1-4433-b02c-29cd2e553013
+		sourceLineageTag: ZipCode
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: ZipCode
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		lineageTag: 5c888952-ffc0-4574-8860-55a5de74e05b
+		sourceLineageTag: Country
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column CountryFull
+		dataType: string
+		lineageTag: bd239ce2-6b5a-4e24-8b05-9db2c2c8bc2d
+		sourceLineageTag: CountryFull
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: CountryFull
+
+		annotation SummarizationSetBy = User
+
+	column Birthday
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 00122abe-ca99-4ebc-aee3-21434c6abaf2
+		sourceLineageTag: Birthday
+		summarizeBy: none
+		sourceColumn: Birthday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: d3512122-71ea-4bc4-8f4a-2f43ae0f7f85
+		sourceLineageTag: Age
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occupation
+		dataType: string
+		lineageTag: d8a1e002-00ce-4127-84de-ff23625783e0
+		sourceLineageTag: Occupation
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 82323d5c-690c-4a8c-890b-cc224410f8f7
+		sourceLineageTag: Company
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle
+		dataType: string
+		lineageTag: 2efa6e56-e82b-446a-b874-1908637d6782
+		sourceLineageTag: Vehicle
+		summarizeBy: none
+		sourceColumn: Vehicle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 3c4eddfe-3c5f-4b47-9ad1-4eaa1ef49f5c
+		sourceLineageTag: Latitude
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: b62f4f3a-ac0e-4be7-963b-13586484b331
+		sourceLineageTag: Longitude
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition customer = entity
+		mode: directLake
+		source
+			entityName: customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - ContosoCleanLakehouse'
+

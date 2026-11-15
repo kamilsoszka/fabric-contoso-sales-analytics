@@ -1,0 +1,116 @@
+table store
+	lineageTag: d897a1a6-d776-4c90-8431-c0202aab63e9
+	sourceLineageTag: [dbo].[store]
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 10bcc52f-2173-4f6a-9207-2e3020559c05
+		sourceLineageTag: StoreKey
+		summarizeBy: count
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreCode
+		dataType: int64
+		formatString: 0
+		lineageTag: a0a65e09-d7c6-4b9f-a234-7b4eb2cc384d
+		sourceLineageTag: StoreCode
+		summarizeBy: count
+		sourceColumn: StoreCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeoAreaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9f9dfe22-8552-4130-a280-e308757f8f2a
+		sourceLineageTag: GeoAreaKey
+		summarizeBy: count
+		sourceColumn: GeoAreaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryCode
+		dataType: string
+		lineageTag: 8ae24de6-22bc-4493-936a-1b87057cd33b
+		sourceLineageTag: CountryCode
+		summarizeBy: none
+		sourceColumn: CountryCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryName
+		dataType: string
+		lineageTag: 0d352942-afb5-483d-abb7-ab2f1d8aefd6
+		sourceLineageTag: CountryName
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 26565627-ab53-4ed1-b461-4a77fc1ea124
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpenDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 43d0afb9-4c70-4228-acde-369d0c146a88
+		sourceLineageTag: OpenDate
+		summarizeBy: none
+		sourceColumn: OpenDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CloseDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d84afd92-1c82-4b6c-b770-c4b3e3ce87de
+		sourceLineageTag: CloseDate
+		summarizeBy: none
+		sourceColumn: CloseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: f359d308-78a3-4e17-ac13-2be25d2db698
+		sourceLineageTag: Description
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column SquareMeters
+		dataType: int64
+		formatString: 0
+		lineageTag: 742b4e73-a9eb-42a4-b3e8-5f1933deafe9
+		sourceLineageTag: SquareMeters
+		summarizeBy: sum
+		sourceColumn: SquareMeters
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: ba3b9eed-3f95-4138-b63d-e6c3796a99b0
+		sourceLineageTag: Status
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition store = entity
+		mode: directLake
+		source
+			entityName: store
+			schemaName: dbo
+			expressionSource: 'DirectLake - ContosoCleanLakehouse'
+

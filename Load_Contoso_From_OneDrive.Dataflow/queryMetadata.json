@@ -1,0 +1,64 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Load_Contoso_From_OneDrive",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "bb170254-bdd6-4292-a9e3-2474494a7155",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Verify_Contoso_Source_Files": {
+      "queryId": "06901f43-c008-490b-bd10-39b5bb59eb88",
+      "queryName": "Verify_Contoso_Source_Files",
+      "loadEnabled": false
+    },
+    "customer": {
+      "queryId": "93c5225b-32a7-42f2-820a-854f19882ece",
+      "queryName": "customer",
+      "loadEnabled": false
+    },
+    "store": {
+      "queryId": "1d703806-70f9-4dd3-8e55-236b7fafc899",
+      "queryName": "store",
+      "loadEnabled": false
+    },
+    "product": {
+      "queryId": "f046366b-eae5-43f1-9c30-efcf69edcb75",
+      "queryName": "product",
+      "loadEnabled": false
+    },
+    "date": {
+      "queryId": "47912022-658f-4829-b20f-0c7da36fc989",
+      "queryName": "date",
+      "loadEnabled": false
+    },
+    "currencyexchange": {
+      "queryId": "15369f10-79e7-47d9-b538-028a575283c9",
+      "queryName": "currencyexchange",
+      "loadEnabled": false
+    },
+    "sales": {
+      "queryId": "d7fd1817-c675-40ef-bbd0-e1654101293c",
+      "queryName": "sales",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"17b642e3-9835-447c-aeab-4541a558d968\",\"DatasourceId\":\"efd12462-a90b-4758-81d3-1c900e78b8d6\"}"
+    },
+    {
+      "path": "https://ksoszka-my.sharepoint.com/personal/kamil_soszka_ksoszka_onmicrosoft_com",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"17b642e3-9835-447c-aeab-4541a558d968\",\"DatasourceId\":\"7add6bf8-e5fb-4ae2-8500-a56e5f9e90cf\"}"
+    }
+  ]
+}

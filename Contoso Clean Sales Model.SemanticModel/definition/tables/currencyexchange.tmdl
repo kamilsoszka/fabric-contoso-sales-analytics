@@ -1,0 +1,50 @@
+table currencyexchange
+	lineageTag: 7dcdfdf8-9f06-42c0-94a4-6f3961a2b834
+	sourceLineageTag: [dbo].[currencyexchange]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 61dda811-2c09-4eef-8e24-f54857640759
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromCurrency
+		dataType: string
+		lineageTag: 7666de65-234f-4ff6-9fbf-772354cbaeb9
+		sourceLineageTag: FromCurrency
+		summarizeBy: none
+		sourceColumn: FromCurrency
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToCurrency
+		dataType: string
+		lineageTag: c731d104-0d36-4ea7-927c-5e0b94ab43e6
+		sourceLineageTag: ToCurrency
+		summarizeBy: none
+		sourceColumn: ToCurrency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exchange
+		dataType: double
+		lineageTag: 83f07dca-1b5a-40a2-b405-e4fa7d37cde2
+		sourceLineageTag: Exchange
+		summarizeBy: sum
+		sourceColumn: Exchange
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition currencyexchange = entity
+		mode: directLake
+		source
+			entityName: currencyexchange
+			schemaName: dbo
+			expressionSource: 'DirectLake - ContosoCleanLakehouse'
+

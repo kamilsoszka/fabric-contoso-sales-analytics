@@ -1,0 +1,23 @@
+relationship 08b941d8-97eb-42b3-b369-aac35d30e904
+	fromColumn: sales.CustomerKey
+	toColumn: customer.CustomerKey
+
+relationship e50fc64c-06ed-49dc-9c95-b4e31ea67764
+	fromColumn: sales.ProductKey
+	toColumn: product.ProductKey
+
+relationship 836f3762-1c13-4a97-8d98-766f017a9da5
+	fromColumn: sales.StoreKey
+	toColumn: store.StoreKey
+
+relationship c09f5bf3-75dc-4de3-a988-90ada6393981
+	joinOnDateBehavior: datePartOnly
+	fromColumn: sales.OrderDate
+	toColumn: date.Date
+
+relationship 7b13652a-1aa3-4740-ad48-98b12913b253
+	isActive: false
+	joinOnDateBehavior: datePartOnly
+	fromColumn: sales.DeliveryDate
+	toColumn: date.Date
+

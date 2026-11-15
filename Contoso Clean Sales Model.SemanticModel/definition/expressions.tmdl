@@ -1,0 +1,9 @@
+expression 'DirectLake - ContosoCleanLakehouse' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/5b6d80b6-785f-42fe-bec3-2fd4653e79a2/440b0c40-f81b-482c-8816-c3842d00eddf", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: a0be1538-75b0-410e-b930-8fd63b5c08e2
+
+	annotation PBI_IncludeFutureArtifacts = False
+

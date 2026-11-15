@@ -1,0 +1,107 @@
+table _Measures
+	lineageTag: b7af9d13-f755-4549-a345-9b8e383c48af
+
+	measure __Placeholder = BLANK()
+		isHidden
+		lineageTag: d76347aa-891c-4967-8b64-f4c21425fa26
+
+	measure 'Sales Amount' = SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice])
+		formatString: #,##0.00
+		displayFolder: Base measures
+		lineageTag: bcd4e1ad-7baf-4549-ad32-5daa0f1b4633
+
+	measure 'Total Cost' = SUMX('sales', 'sales'[Quantity] * 'sales'[UnitCost])
+		formatString: #,##0.00
+		displayFolder: Base measures
+		lineageTag: c8f8471d-09c9-4e85-8634-a5996fac1842
+
+	measure 'Gross Margin' = SUMX('sales', 'sales'[Quantity] * ('sales'[NetPrice] - 'sales'[UnitCost]))
+		formatString: #,##0.00
+		displayFolder: Base measures
+		lineageTag: 049de349-13f6-4a9c-a2f7-59cd029eb730
+
+	measure 'Gross Margin %' = DIVIDE(SUMX('sales', 'sales'[Quantity] * ('sales'[NetPrice] - 'sales'[UnitCost])), SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]))
+		formatString: 0.00%
+		displayFolder: Base measures
+		lineageTag: 962ee209-f22b-43ef-9635-793c199985c1
+
+	measure 'Total Quantity' = SUM('sales'[Quantity])
+		formatString: #,##0
+		displayFolder: Base measures
+		lineageTag: 317a7265-f032-4515-913b-8bad2355f2ca
+
+	measure Orders = DISTINCTCOUNT('sales'[OrderKey])
+		formatString: #,##0
+		displayFolder: Base measures
+		lineageTag: 5ff6db4b-a140-450e-add8-1975a4beb9ff
+
+	measure Customers = DISTINCTCOUNT('sales'[CustomerKey])
+		formatString: #,##0
+		displayFolder: Base measures
+		lineageTag: de822f40-89df-4328-936f-c7635a85970a
+
+	measure 'Average Order Value' = DIVIDE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), DISTINCTCOUNT('sales'[OrderKey]))
+		formatString: #,##0.00
+		displayFolder: Base measures
+		lineageTag: 2bbb7b26-e251-4237-8a5b-2374f3cdb451
+
+	measure 'Sales Amount YTD' = TOTALYTD(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), 'date'[Date])
+		formatString: #,##0.00
+		displayFolder: Standard time-related calculations
+		lineageTag: 48db9b7f-0de4-4079-9781-393d335aaab3
+
+	measure 'Sales Amount QTD' = TOTALQTD(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), 'date'[Date])
+		formatString: #,##0.00
+		displayFolder: Standard time-related calculations
+		lineageTag: e614871c-13ad-4b92-9988-a2568bc2c626
+
+	measure 'Sales Amount MTD' = TOTALMTD(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), 'date'[Date])
+		formatString: #,##0.00
+		displayFolder: Standard time-related calculations
+		lineageTag: 180c14b3-b0ea-47ae-ad06-8b1eb529e0b8
+
+	measure 'Sales Amount PY' = CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), SAMEPERIODLASTYEAR('date'[Date]))
+		formatString: #,##0.00
+		displayFolder: Comparing different time periods
+		lineageTag: a6ef92de-e626-484e-a961-82f69607456d
+
+	measure 'Sales YoY Change' = VAR CurrentSales = SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]) VAR PreviousYearSales = CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), SAMEPERIODLASTYEAR('date'[Date])) RETURN IF(ISBLANK(CurrentSales), BLANK(), CurrentSales - PreviousYearSales)
+		formatString: #,##0.00
+		displayFolder: Comparing different time periods
+		lineageTag: d7c4fe01-ef17-43c2-b5c0-1faddc427e69
+
+	measure 'Sales YoY %' = VAR CurrentSales = SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]) VAR PreviousYearSales = CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), SAMEPERIODLASTYEAR('date'[Date])) RETURN IF(ISBLANK(CurrentSales), BLANK(), DIVIDE(CurrentSales - PreviousYearSales, PreviousYearSales))
+		formatString: 0.00%
+		displayFolder: Comparing different time periods
+		lineageTag: c06674d0-c858-4ef1-93ec-f46906bc5736
+
+	measure 'Sales Running Total' = CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), FILTER(ALLSELECTED('date'[Date]), 'date'[Date] <= MAX('date'[Date])))
+		formatString: #,##0.00
+		displayFolder: Cumulative total
+		lineageTag: 88b825f3-bc3e-43a1-8dd3-4caa270cbe7a
+
+	measure 'Product Rank' = RANKX(ALLSELECTED('product'[ProductName]), CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice])),, DESC, DENSE)
+		formatString: #,##0
+		displayFolder: Ranking
+		lineageTag: 6538ba87-125c-4b41-a07a-37c03393b1ae
+
+	measure 'Customer Rank' = RANKX(ALLSELECTED('customer'[CustomerKey]), CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice])),, DESC, DENSE)
+		formatString: #,##0
+		displayFolder: Ranking
+		lineageTag: 09a1f0b9-fd13-49fe-9043-76ce25acd3da
+
+	measure 'Store Rank' = RANKX(ALLSELECTED('store'[StoreKey]), CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice])),, DESC, DENSE)
+		formatString: #,##0
+		displayFolder: Ranking
+		lineageTag: ae72c34b-1bc0-4266-a7cb-2bfb6fffc275
+
+	measure 'Delivered Sales Amount' = CALCULATE(SUMX('sales', 'sales'[Quantity] * 'sales'[NetPrice]), USERELATIONSHIP('sales'[DeliveryDate], 'date'[Date]))
+		formatString: #,##0.00
+		displayFolder: Standard time-related calculations\Delivery date
+		lineageTag: ab1e6c36-f503-4561-a5a9-aa4019464637
+
+	measure 'Delivered Orders' = CALCULATE(DISTINCTCOUNT('sales'[OrderKey]), USERELATIONSHIP('sales'[DeliveryDate], 'date'[Date]))
+		formatString: #,##0
+		displayFolder: Standard time-related calculations\Delivery date
+		lineageTag: 4caa9148-8fd5-49b6-8ab5-8317e07906ff
+
